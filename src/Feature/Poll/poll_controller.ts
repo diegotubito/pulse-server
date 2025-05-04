@@ -3,6 +3,16 @@ import { PollService } from './poll_service';
 
 const pollService = new PollService();
 
+export const getAllActivePolls = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+   try {
+      const polls = await pollService.getAllActivePolls();
+      res.json(polls);
+   } catch (err) {
+      console.error('[getAllActivePolls]', err);
+      next(err); // Usamos next para que Express lo maneje bien
+   }
+};
+
 export const getAllPolls = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
    try {
       const polls = await pollService.getAllPolls();

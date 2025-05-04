@@ -2,7 +2,5 @@ import {Server} from './Server/Server'; // Adjusted path to match potential file
 
 import 'dotenv/config';
 
-
-
 const server = new Server();
 server.start();

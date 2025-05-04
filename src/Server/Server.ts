@@ -1,7 +1,9 @@
 // server.ts
+import cors from 'cors';
 import express from 'express';
 import pollRouter from '../Feature/Poll/poll_routes'; // Adjusted path to match potential file structure
 import 'dotenv/config';
+
 
 
 export class Server {
@@ -21,6 +23,7 @@ export class Server {
       this.app.use(express.json());
       this.app.use(express.urlencoded({ extended: true }));
       this.app.use(express.static('public'));
+      this.app.use(cors()); // Habilitamos CORS para todas las rutas
    }
 
    start() {
