@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start": "node dist/Server/index.js",
     "test:getPolls": "curl -X GET http://localhost:3666/api/v1/polls",
     "test:createPoll": "curl -X POST http://localhost:3666/api/v1/polls -H \"Content-Type: application/json\" -d '{\"title\": \"¿Te gusta Node.js?\"}'",
     "dev": "ts-node-dev --respawn src/index.ts"
