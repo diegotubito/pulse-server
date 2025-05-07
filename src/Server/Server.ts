@@ -2,6 +2,7 @@
 import express from 'express';
 import pollRouter from '../Feature/Poll/poll_routes'; // Adjusted path to match potential file structure
 import 'dotenv/config';
+import cors from 'cors';
 
 
 export class Server {
@@ -21,6 +22,8 @@ export class Server {
       this.app.use(express.json());
       this.app.use(express.urlencoded({ extended: true }));
       this.app.use(express.static('public'));
+       console.log("[Middleware] Registering CORS");
+      this.app.use(cors());
    }
 
    start() {
